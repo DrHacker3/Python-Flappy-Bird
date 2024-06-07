@@ -36,9 +36,12 @@ pipe = pygame.image.load('assets/pipe.png')
 flap_sound = pygame.mixer.Sound('assets/wing.wav')
 hit_sound = pygame.mixer.Sound('assets/hit.wav')
 score_sound = pygame.mixer.Sound('assets/point.wav')
-die_sound = pygame.mixer.Sound('assets/die.wav')
-#pygame.mixer.music.load('assets/background-music.mp3')
-#pygame.mixer.music.play(-1)  # Play background music in a loop
+die_sound = pygame.mixer.Sound('assets/fortnite-death.mp3')
+pygame.mixer.music.load('assets/background-music.mp3')
+pygame.mixer.music.play(-1)  # Play background music in a loop
+pygame.mixer.Sound.set_volume(flap_sound, 0.5)
+pygame.mixer.Sound.set_volume(hit_sound, 0.5)
+pygame.mixer.Sound.set_volume(score_sound, 0.5)
 
 # Font for score display
 font = pygame.font.Font('assets/04B_19.TTF', 20)
@@ -89,12 +92,19 @@ def check_collision(pipes):
     for pipe_rect in pipes:
         if bird_rect.colliderect(pipe_rect):
             hit_sound.play()
+            die_sound.play()
             game_active = False
     if bird_rect.top <= -50 or bird_rect.bottom >= SCREEN_HEIGHT + 0:
         die_sound.play()
-        game_over = font.render(str('Game Over'), True, (255, 255, 255))
-        game_over_rect = game_over.get_rect(center=(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2))
+        game_active = False
+        
+def check_death():
+    global game_active
+    if game_active == False:
+        game_over = font.render('Game Over', True, (255, 255, 255))
+        game_over_rect = game_over.get_rect(center=(screen.get_width() / 2, screen.get_height() / 2))
         screen.blit(game_over, game_over_rect)
+        pygame.display.update()
         game_active = False
 
 def create_pipe():
@@ -153,6 +163,7 @@ while True:
         draw_pipes(pipes)
         draw_bird(bird_x, bird_y)
         display_score(score)
+        check_death()
         
         # Bird animation
         animation_counter += 1
@@ -165,6 +176,7 @@ while True:
         draw_pipes(pipes)
         draw_bird(bird_x, bird_y)
         display_score(score)
+        check_death()
     
     pygame.display.update()
     clock.tick(FPS)
