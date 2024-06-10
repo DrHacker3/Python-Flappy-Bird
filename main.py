@@ -20,6 +20,7 @@ FPS = 60
 # Create the screen object
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('Flappy Bird Remake')
+pygame.display.set_icon(pygame.image.load('assets/bird.png'))
 
 # Clock object to control the frame rate
 clock = pygame.time.Clock()
