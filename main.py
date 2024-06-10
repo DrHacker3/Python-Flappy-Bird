@@ -25,28 +25,28 @@ pygame.display.set_caption('Flappy Bird Remake')
 clock = pygame.time.Clock()
 
 # Load game assets
-background = pygame.image.load('assets/background.png')
-bird_downflap = pygame.image.load('assets/bird-downflap.png')
-bird_midflap = pygame.image.load('assets/bird.png')
-bird_upflap = pygame.image.load('assets/bird-upflap.png')
+background = pygame.image.load('.assets/background.png')
+bird_downflap = pygame.image.load('.assets/bird-downflap.png')
+bird_midflap = pygame.image.load('.assets/bird.png')
+bird_upflap = pygame.image.load('.assets/bird-upflap.png')
 bird_list = [bird_downflap, bird_midflap, bird_upflap]
 bird_index = 0
 bird = bird_list[bird_index]
-pipe = pygame.image.load('assets/pipe.png')
+pipe = pygame.image.load('.assets/pipe.png')
 
 # Load sounds
-flap_sound = pygame.mixer.Sound('assets/wing.wav')
-hit_sound = pygame.mixer.Sound('assets/hit.wav')
-score_sound = pygame.mixer.Sound('assets/point.wav')
-die_sound = pygame.mixer.Sound('assets/fortnite-death.mp3')
-pygame.mixer.music.load('assets/background-music.mp3')
+flap_sound = pygame.mixer.Sound('.assets/wing.wav')
+hit_sound = pygame.mixer.Sound('.assets/hit.wav')
+score_sound = pygame.mixer.Sound('.assets/point.wav')
+die_sound = pygame.mixer.Sound('.assets/fortnite-death.mp3')
+pygame.mixer.music.load('.assets/background-music.mp3')
 pygame.mixer.music.play(-1)  # Play background music in a loop
 pygame.mixer.Sound.set_volume(flap_sound, 0.5)
 pygame.mixer.Sound.set_volume(hit_sound, 0.5)
 pygame.mixer.Sound.set_volume(score_sound, 0.5)
 
 # Font for score display
-font = pygame.font.Font('assets/04B_19.TTF', 20)
+font = pygame.font.Font('.assets/04B_19.TTF', 20)
 
 # Game variables
 bird_x = 50
