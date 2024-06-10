@@ -1,5 +1,7 @@
-# Sean Aitken
-# 2024
+# Author: Sean Aitken
+# Date Created: 06/06/2024
+# Last Update: 10/06/2024
+# V1.0
 # Flappy Bird
 
 # Imports
