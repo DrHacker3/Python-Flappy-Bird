@@ -1,3 +1,7 @@
-Simple Flappy Bird game made with pygame in python.
+Simple Flappy Bird remake with funny sounds made with pygame in python.
 
-Play by using the spacebar to jump.
+<b>How to Play</b>
+Run the python script
+Press space to move up
+Don’t collide with pipes or floor/roof
+See how far you can get
