@@ -1,6 +1,6 @@
 Simple Flappy Bird remake with funny sounds made with pygame in python.
 
-<b>How to Play</b>
+<H2>How to Play</h2>
 <br>
 <ul>
 <li>Run the python script</li>
