@@ -1,6 +1,6 @@
 # Author: Sean Aitken
 # Date Created: 06/06/2024
-# Last Update: 10/06/2024
+# Last Update: 18/06/2024
 # V1.0
 # Flappy Bird
 
@@ -66,7 +66,6 @@ pipes = []
 
 # Score
 score = 0
-high_score = 0
 
 # Game states
 game_active = True
