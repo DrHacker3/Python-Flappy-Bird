@@ -158,6 +158,10 @@ while True:
         for pipe_rect in pipes:
             if pipe_rect.centerx == bird_x:
                 score += 0.5
+                if pipe_speed < 2.4:
+                    pipe_speed += 0.1
+                else:
+                    pipe_speed = 2
                 if score % 1 == 0:
                     score_sound.play()
         
